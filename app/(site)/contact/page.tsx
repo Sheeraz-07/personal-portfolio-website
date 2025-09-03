@@ -200,7 +200,7 @@ export default function ContactPage() {
           >
             <Card className="h-full flex flex-col">
               <SectionHeading level={3} className="mb-6">
-                Let's Connect
+                Let&apos;s Connect
               </SectionHeading>
               
               <p className="text-text-secondary mb-8 leading-relaxed">

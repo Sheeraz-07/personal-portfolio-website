@@ -191,7 +191,7 @@ export default function AboutPage() {
         >
           <Card className="bg-gradient-to-r from-accent/5 to-accent/10 border-accent/20">
             <SectionHeading level={3} className="mb-4">
-              Let's Work Together
+              Let&apos;s Work Together
             </SectionHeading>
             <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
               I&apos;m always interested in new opportunities and collaborations. 
