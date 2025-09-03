@@ -53,74 +53,78 @@ skills: [
     { name: "GitHub", url: "https://github.com/Sheeraz-07?tab=repositories", icon: "github" },
     { name: "WhatsApp", url: "https://wa.me/+923266214971", icon: "whatsapp" },
   ],
+
   projects: [
-    {
-      slug: "ecommerce-platform",
-      title: "E-Commerce Platform",
-      blurb: "A scalable online store with modern UX and performance optimizations",
-      role: "Lead Developer",
-      tools: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-      results: "Boosted sales by 25% and reduced load times by 40%",
-      images: ["/images/project-1-1.jpg", "/images/project-1-2.jpg", "/images/project-1-3.jpg"],
-      backstory: "A growing retail business needed a modern e-commerce solution to replace their outdated platform and improve customer experience.",
-      process: [
-        "User research and competitor analysis",
-        "Wireframing and prototyping",
-        "Development with Next.js and TypeScript",
-        "Integration with Stripe for payments",
-        "Performance optimization and testing"
-      ]
-    },
-    {
-      slug: "task-management-app",
-      title: "Task Management App",
-      blurb: "Collaborative project management tool with real-time updates",
-      role: "Full-Stack Developer",
-      tools: ["React", "Node.js", "Socket.io", "MongoDB"],
-      results: "Increased team productivity by 30% and user engagement by 45%",
-      images: ["/images/project-2-1.jpg", "/images/project-2-2.jpg", "/images/project-2-3.jpg"],
-      backstory: "Remote teams needed a better way to collaborate and track project progress in real-time.",
-      process: [
-        "Requirements gathering with stakeholders",
-        "System architecture design",
-        "Real-time features with Socket.io",
-        "Database optimization",
-        "User testing and iteration"
-      ]
-    },
-    {
-      slug: "design-system",
-      title: "Component Design System",
-      blurb: "Comprehensive design system for consistent UI across products",
-      role: "Design System Lead",
-      tools: ["React", "Storybook", "Figma", "TypeScript"],
-      results: "Reduced development time by 50% and improved design consistency",
-      images: ["/images/project-3-1.jpg", "/images/project-3-2.jpg", "/images/project-3-3.jpg"],
-      backstory: "A growing company needed to standardize their UI components across multiple products and teams.",
-      process: [
-        "Audit of existing components",
-        "Design token creation",
-        "Component library development",
-        "Documentation with Storybook",
-        "Team adoption and training"
-      ]
-    },
-    {
-      slug: "analytics-dashboard",
-      title: "Analytics Dashboard",
-      blurb: "Real-time data visualization platform for business insights",
-      role: "Frontend Developer",
-      tools: ["Vue.js", "D3.js", "Python", "FastAPI"],
-      results: "Improved decision-making speed by 60% with real-time insights",
-      images: ["/images/project-4-1.jpg", "/images/project-4-2.jpg", "/images/project-4-3.jpg"],
-      backstory: "A data-driven company needed better visualization tools to make sense of their growing datasets.",
-      process: [
-        "Data requirements analysis",
-        "Interactive chart design",
-        "Real-time data pipeline setup",
-        "Performance optimization",
-        "User training and rollout"
-      ]
-    }
+  {
+    "slug": "data-anonymization-tool",
+    "title": "Data Anonymization Tool",
+    "blurb": "A privacy-first web app that anonymizes sensitive datasets while retaining analytical value",
+    "role": "Full-Stack Developer",
+    "tools": ["Python", "Streamlit", "Pandas", "Data Privacy Techniques"],
+    "results": "Enabled secure data sharing and compliance with privacy regulations for non-technical users",
+    "images": ["/images/datan1.webp", "/images/datan2.jpg", "/images/datan3.jpg"],
+    "backstory": "Organizations needed a way to share sensitive datasets without compromising privacy or research usability.",
+    "process": [
+      "Identified sensitive fields and anonymization requirements",
+      "Implemented masking, pseudonymization, and noise injection techniques",
+      "Built a clean UI for one-click CSV uploads",
+      "Tested usability with sample datasets",
+      "Deployed on Streamlit for easy access by non-technical users"
+    ]
+  },
+  {
+    "slug": "salary-prediction-app",
+    "title": "Salary Prediction App",
+    "blurb": "An interactive ML-powered tool to estimate salaries based on experience, skills, and education",
+    "role": "Machine Learning Developer",
+    "tools": ["Python", "Streamlit", "scikit-learn", "Regression Models"],
+    "results": "Provided accurate salary estimates with visualizations for confidence and feature impact",
+    "images": ["/images/salary1.webp", "/images/salary2.jpg", "/images/salary3.jpg"],
+    "backstory": "Job seekers and HR teams needed a quick way to predict salaries for various profiles using ML.",
+    "process": [
+      "Collected and preprocessed salary datasets",
+      "Trained regression models to predict salaries",
+      "Built Streamlit UI for interactive profile input",
+      "Visualized confidence intervals and feature impact",
+      "Validated predictions and deployed app"
+    ]
+  },
+ {
+  "slug": "smart-doorbell-system",
+  "title": "Smart Doorbell System",
+  "blurb": "AI-powered doorbell that detects and recognizes known faces, automatically triggering notifications and alerts",
+  "role": "AI Engineer & IoT Developer",
+  "tools": ["ESP32-CAM", "Raspberry Pi", "OpenCV", "Face Recognition", "Python"],
+  "results": "Enabled intelligent visitor detection with real-time face recognition, reducing the need for manual checks and improving home security",
+  "images": ["/images/doorbell1.jpg", "/images/doorbell2.webp", "/images/doorbell3.png"],
+  "backstory": "Built as an IoT and AI integration project to explore real-world applications of computer vision and embedded systems. The system combined edge devices with machine learning to create a practical, security-focused solution.",
+  "process": [
+    "Configured ESP32-CAM for video streaming and initial image capture",
+    "Developed Python-based face recognition model using OpenCV on Raspberry Pi",
+    "Trained system with known faces (20+ labeled images per person)",
+    "Integrated alert mechanism to trigger doorbell ring and notifications when a known person is detected",
+    "Tested the system in real-time with multiple users to ensure robustness and accuracy"
   ]
+}
+
+,
+  {
+    "slug": "table-trace-ai",
+    "title": "Table Trace AI",
+    "blurb": "AI tool for generating SQL queries and attendance reports from natural language prompts",
+    "role": "AI Developer",
+    "tools": ["Python", "NLP", "SQL", "Chainlit"],
+    "results": "Bridged gap between non-technical users and databases, enabling easy query generation and reporting",
+    "images": ["/images/tabletrace1.webp", "/images/tabletrace2.jpg", "/images/tabletrace3.jpg"],
+    "backstory": "Businesses and educators needed an intuitive way to generate SQL queries and attendance reports without coding knowledge.",
+    "process": [
+      "Processed natural language prompts using NLP techniques",
+      "Generated SQL queries dynamically for various database structures",
+      "Built attendance report generator parsing tabular datasets",
+      "Developed interactive UI with Chainlit for easy user interaction",
+      "Tested end-to-end functionality and refined for accuracy"
+    ]
+  }
+]
+
 };

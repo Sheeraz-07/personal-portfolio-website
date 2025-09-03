@@ -40,7 +40,7 @@ export default function HomePage() {
               {siteConfig.tagline}
             </motion.p>
 
-            {/* Hero Visual Placeholder */}
+            {/* Hero Visual Placeholder
             <motion.div
               className="mb-12 mx-auto w-full max-w-2xl aspect-video bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl border border-accent/20 flex items-center justify-center"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -60,7 +60,26 @@ export default function HomePage() {
                   <span className="text-xs opacity-75">Replace with looping WEBM/MP4</span>
                 </p>
               </div>
-            </motion.div>
+            </motion.div> */}
+
+{/* Hero Video */}
+<motion.div
+  className="mb-12 mx-auto w-full max-w-2xl aspect-video rounded-2xl overflow-hidden border border-accent/20 shadow-lg"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+  whileHover={{ scale: 1.02 }}
+>
+  <video
+    src="/videos/hero.mp4"  // <-- place your file in public/videos/hero.mp4
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover"
+  />
+</motion.div>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
