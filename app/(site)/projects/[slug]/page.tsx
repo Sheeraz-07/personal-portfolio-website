@@ -25,7 +25,7 @@ export default function ProjectDetailPage() {
             Project Not Found
           </SectionHeading>
           <p className="text-text-secondary mb-8">
-            The project you're looking for doesn't exist.
+            The project you&apos;re looking for doesn&apos;t exist.
           </p>
           <AccentButton onClick={() => router.push('/projects')}>
             Back to Projects

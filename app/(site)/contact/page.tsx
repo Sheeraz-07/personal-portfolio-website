@@ -79,7 +79,7 @@ export default function ContactPage() {
               </SectionHeading>
               
               <p className="text-text-secondary mb-6">
-                Thank you for reaching out! I'll get back to you as soon as possible.
+                Thank you for reaching out! I&apos;ll get back to you as soon as possible.
               </p>
               
               <AccentButton onClick={() => setIsSubmitted(false)}>
@@ -105,7 +105,7 @@ export default function ContactPage() {
             Get In Touch
           </SectionHeading>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Have a project in mind or just want to chat? I'd love to hear from you.
+            Have a project in mind or just want to chat? I&apos;d love to hear from you.
           </p>
         </motion.div>
 
@@ -204,7 +204,7 @@ export default function ContactPage() {
               </SectionHeading>
               
               <p className="text-text-secondary mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, 
+                I&apos;m always open to discussing new opportunities, interesting projects, 
                 or just having a conversation about technology and design. Feel free to 
                 reach out through the form or connect with me on social media.
               </p>

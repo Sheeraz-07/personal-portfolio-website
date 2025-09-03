@@ -22,7 +22,7 @@ function CGPAProgressRing() {
       setAnimatedValue(cgpaValue)
     }, 800)
     return () => clearTimeout(timer)
-  }, [])
+  }, [cgpaValue])
 
   return (
     <div className="relative w-32 h-32">
@@ -194,8 +194,8 @@ export default function AboutPage() {
               Let's Work Together
             </SectionHeading>
             <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
-              I'm always interested in new opportunities and collaborations. 
-              Whether you have a project in mind or just want to chat about technology and design, I'd love to hear from you.
+              I&apos;m always interested in new opportunities and collaborations. 
+              Whether you have a project in mind or just want to chat about technology and design, I&apos;d love to hear from you.
             </p>
             <motion.a
               href="/contact"
