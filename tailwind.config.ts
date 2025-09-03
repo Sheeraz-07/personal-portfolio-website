@@ -13,19 +13,11 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       colors: {
-        background: {
-          DEFAULT: '#0B0F14',
-          light: '#F5F5F5',
-        },
-        surface: {
-          DEFAULT: '#11161D',
-          light: '#FFFFFF',
-        },
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
         text: {
-          primary: '#E6EAF0',
-          secondary: '#A9B1BD',
-          'primary-light': '#1A202C',
-          'secondary-light': '#4A5568',
+          primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
         },
         accent: {
           DEFAULT: '#00D1B2',

@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-background: 248 250 252; /* Light theme background - softer white */
+    --color-surface: 255 255 255; /* Light theme surface - pure white */
+    --color-text-primary: 15 23 42; /* Light theme primary text - darker for better contrast */
+    --color-text-secondary: 100 116 139; /* Light theme secondary text - balanced gray */
+  }
+  
+  .dark {
+    --color-background: 11 15 20; /* Dark theme background */
+    --color-surface: 17 22 29; /* Dark theme surface */
+    --color-text-primary: 230 234 240; /* Dark theme primary text */
+    --color-text-secondary: 169 177 189; /* Dark theme secondary text */
+  }
+  
   html {
     scroll-behavior: smooth;
   }
@@ -11,17 +25,22 @@
     @apply bg-background text-text-primary transition-colors duration-300;
   }
   
-  .light body {
-    @apply bg-background-light text-text-primary-light;
+  /* Light theme specific improvements */
+  :root {
+    --shadow-light: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --border-light: rgb(226 232 240);
+  }
+  
+  .dark {
+    --shadow-light: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --border-light: rgb(51 65 85);
   }
   
   /* Focus styles for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
-  }
-  
-  .light *:focus-visible {
-    @apply ring-offset-background-light;
   }
 }
 
@@ -32,7 +51,27 @@
                 radial-gradient(circle at 40% 80%, rgba(0, 209, 178, 0.08) 0%, transparent 50%);
   }
   
+  /* Light theme gradient mesh */
+  :root .gradient-mesh {
+    background: radial-gradient(circle at 20% 50%, rgba(0, 209, 178, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 209, 178, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 209, 178, 0.04) 0%, transparent 50%);
+  }
+  
   .text-gradient {
     @apply bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent;
+  }
+  
+  /* Card shadows for light theme */
+  :root .card-shadow {
+    box-shadow: var(--shadow-light);
+  }
+  
+  :root .card-shadow:hover {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .dark .card-shadow {
+    box-shadow: none;
   }
 }
