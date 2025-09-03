@@ -2,10 +2,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 
 const contactSchema = z.object({
-  name: z.string().min(1, 'Name is required').min(2, 'Name must be at least 2 characters'),
+  name: z.string().min(1, 'Name is required').min(2, 'Name must be at least 2 characters').max(100, 'Name is too long'),
   email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
-  message: z.string().min(1, 'Message is required').min(10, 'Message must be at least 10 characters'),
+  message: z.string().min(1, 'Message is required').min(10, 'Message must be at least 10 characters').max(1000, 'Message is too long'),
 })
+
+// Email validation function
+async function validateEmail(email: string): Promise<boolean> {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,52 +20,43 @@ export async function POST(request: NextRequest) {
     // Validate the request body
     const validatedData = contactSchema.parse(body)
     
-    // Log the contact form submission (replace with actual email service integration)
-    console.log('📧 New contact form submission:')
-    console.log('Name:', validatedData.name)
-    console.log('Email:', validatedData.email)
-    console.log('Message:', validatedData.message)
-    console.log('Timestamp:', new Date().toISOString())
-    console.log('---')
-    
-    // TODO: Integrate with email service (e.g., SendGrid, Resend, Nodemailer)
-    // Example SendGrid integration:
-    /*
-    const sgMail = require('@sendgrid/mail')
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-    
-    const msg = {
-      to: 'your-email@example.com', // Your email
-      from: 'noreply@yourdomain.com', // Verified sender
-      subject: `New Contact Form Submission from ${validatedData.name}`,
-      text: `
-        Name: ${validatedData.name}
-        Email: ${validatedData.email}
-        Message: ${validatedData.message}
-      `,
-      html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${validatedData.name}</p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-      `,
+    // Additional email validation
+    const isValidEmail = await validateEmail(validatedData.email)
+    if (!isValidEmail) {
+      return NextResponse.json(
+        { 
+          success: false, 
+          message: 'Please enter a valid email address' 
+        },
+        { status: 400 }
+      )
     }
     
-    await sgMail.send(msg)
-    */
-    
-    // TODO: You can also save to a database here
-    // Example with Prisma:
-    /*
-    await prisma.contactSubmission.create({
-      data: {
+    // Use Formspree with a working endpoint
+    const response = await fetch('https://formspree.io/f/mldwpvkr', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         name: validatedData.name,
         email: validatedData.email,
         message: validatedData.message,
-      },
+        _replyto: validatedData.email,
+        _subject: `Portfolio Contact: ${validatedData.name}`
+      })
     })
-    */
+    
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error('Email service error:', response.status, errorText)
+      throw new Error(`Failed to send email: ${response.status}`)
+    }
+    
+    const result = await response.json()
+    console.log('Email service response:', result)
+    
+    console.log('📧 Email sent successfully to phantomsheeraz280@gmail.com')
     
     return NextResponse.json(
       { 
@@ -86,14 +83,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: false, 
-        message: 'Internal server error' 
+        message: 'Failed to send message. Please try again later.' 
       },
       { status: 500 }
     )
   }
 }
 
-// Handle unsupported methods
 export async function GET() {
   return NextResponse.json(
     { message: 'Method not allowed' },
