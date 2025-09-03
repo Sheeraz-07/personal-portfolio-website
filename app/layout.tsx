@@ -12,54 +12,10 @@ const inter = Inter({
   preload: true,
 })
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL('https://storyfolio.vercel.app'),
-//   title: 'Storyfolio - Muhammad Sheeraz | AI Engineer & Agentic AI Developer',
-//   description: 'Portfolio of Muhammad Sheeraz, an AI Engineer, Agentic AI Developer, and IoT Innovator. Exploring the intersection of intelligent systems, autonomous agents, and connected devices to design solutions that blend AI-driven reasoning with real-world impact.',
-//   keywords: ['portfolio', 'developer', 'designer', 'react', 'nextjs', 'typescript', 'web development'],
-//   authors: [{ name: 'Muhammad Sheeraz' }],
-//   creator: 'Muhammad Sheeraz',
-//   openGraph: {
-//     type: 'website',
-//     locale: 'en_US',
-//     url: 'https://storyfolio.vercel.app',
-//     title: 'Storyfolio - Muhammad Sheeraz | AI Engineer & Agentic AI Developer',
-//     description: 'Portfolio of Muhammad Sheeraz, an AI Engineer, Agentic AI Developer, and IoT Innovator. Exploring the intersection of intelligent systems, autonomous agents, and connected devices to design solutions that blend AI-driven reasoning with real-world impact.',
-//     siteName: 'Storyfolio',
-//     images: [
-//       {
-//         url: '/images/og-image.jpg',
-//         width: 1200,
-//         height: 630,
-//         alt: 'Storyfolio - Muhammad Sheeraz Portfolio',
-//       },
-//     ],
-//   },
-//   twitter: {
-//     card: 'summary_large_image',
-//     title: 'Storyfolio - Muhammad Sheeraz | AI Engineer & Agentic AI Developer',
-//     description: 'Portfolio of Muhammad Sheeraz, an AI Engineer, Agentic AI Developer, and IoT Innovator. Exploring the intersection of intelligent systems, autonomous agents, and connected devices to design solutions that blend AI-driven reasoning with real-world impact.',
-//     images: ['/images/og-image.jpg'],
-//     creator: '@muhammadsheeraz',
-//   },
-//   robots: {
-//     index: true,
-//     follow: true,
-//     googleBot: {
-//       index: true,
-//       follow: true,
-//       'max-video-preview': -1,
-//       'max-image-preview': 'large',
-//       'max-snippet': -1,
-//     },
-//   },
-//   verification: {
-//     google: 'your-google-verification-code',
-//   },
-// }
+
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://storyfolio.vercel.app'), // 👈 central base for resolving URLs
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://storyfolio.vercel.app'),
   title: 'Storyfolio - Muhammad Sheeraz | AI Engineer & Agentic AI Developer',
   description:
     'Portfolio of Muhammad Sheeraz, an AI Engineer, Agentic AI Developer, and IoT Innovator. Exploring the intersection of intelligent systems, autonomous agents, and connected devices to design solutions that blend AI-driven reasoning with real-world impact.',
@@ -87,7 +43,7 @@ export const metadata: Metadata = {
     siteName: 'Storyfolio',
     images: [
       {
-        url: '/images/og-image.jpg', // 👈 now relative, auto-resolves using metadataBase
+        url: '/images/profile.png', // 👈 now relative, auto-resolves using metadataBase
         width: 1200,
         height: 630,
         alt: 'Storyfolio - Muhammad Sheeraz Portfolio',
@@ -100,7 +56,7 @@ export const metadata: Metadata = {
     title: 'Storyfolio - Muhammad Sheeraz | AI Engineer & Agentic AI Developer',
     description:
       'Portfolio of Muhammad Sheeraz, an AI Engineer, Agentic AI Developer, and IoT Innovator. Exploring the intersection of intelligent systems, autonomous agents, and connected devices to design solutions that blend AI-driven reasoning with real-world impact.',
-    images: ['/images/og-image.jpg'], // 👈 relative path works fine
+    images: ['/images/profile.png'],
     creator: '@muhammadsheeraz',
   },
 
@@ -116,9 +72,9 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  // verification: {
+  //   google: 'your-google-verification-code',
+  // },
 }
 
 
