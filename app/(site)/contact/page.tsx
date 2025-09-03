@@ -203,7 +203,7 @@ export default function ContactPage() {
                 Let&apos;s Connect
               </SectionHeading>
               
-              <p className="text-text-secondary mb-8 leading-relaxed">
+              <p className="text-text-secondary mb-8 leading-relaxed text-justify">
                 I&apos;m always open to discussing new opportunities, interesting projects, 
                 or just having a conversation about technology and design. Feel free to 
                 reach out through the form or connect with me on social media.

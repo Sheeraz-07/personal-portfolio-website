@@ -176,7 +176,7 @@ export default function ProjectDetailPage() {
               <SectionHeading level={3} className="mb-4">
                 The Challenge
               </SectionHeading>
-              <p className="text-text-secondary leading-relaxed">
+              <p className="text-text-secondary leading-relaxed text-justify">
                 {project.backstory}
               </p>
             </Card>

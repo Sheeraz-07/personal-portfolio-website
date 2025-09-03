@@ -127,7 +127,7 @@ export default function AboutPage() {
               <SectionHeading level={3} className="mb-4">
                 My Story
               </SectionHeading>
-              <p className="text-text-secondary leading-relaxed mb-6">
+              <p className="text-text-secondary leading-relaxed mb-6 text-justify">
                 {siteConfig.bio}
               </p>
               
@@ -165,18 +165,20 @@ export default function AboutPage() {
             <SectionHeading level={3} className="mb-6 text-center">
               Education
             </SectionHeading>
-            <div className="relative max-w-4xl mx-auto">
-              <div className="text-center">
-                <h4 className="text-2xl font-semibold text-text-primary mb-3">{siteConfig.education.institution}</h4>
-                <p className="text-xl text-text-secondary mb-6">{siteConfig.education.degree}</p>
-                <div className="flex justify-center items-center gap-8 text-base">
-                  <span className="text-text-secondary">{siteConfig.education.semester}</span>
-                  <span className="text-text-secondary">{siteConfig.education.year}</span>
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                <div className="text-center lg:text-left flex-1">
+                  <h4 className="text-2xl font-semibold text-text-primary mb-3">{siteConfig.education.institution}</h4>
+                  <p className="text-xl text-text-secondary mb-6">{siteConfig.education.degree}</p>
+                  <div className="flex justify-center lg:justify-start items-center gap-8 text-base">
+                    <span className="text-text-secondary">{siteConfig.education.semester}</span>
+                    <span className="text-text-secondary">{siteConfig.education.year}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 flex flex-col items-center">
-                <CGPAProgressRing />
-                <span className="text-sm text-text-secondary mt-3 font-medium">CGPA</span>
+                <div className="flex flex-col items-center lg:items-end">
+                  <CGPAProgressRing />
+                  <span className="text-sm text-text-secondary mt-3 font-medium">CGPA</span>
+                </div>
               </div>
             </div>
           </Card>
@@ -193,7 +195,7 @@ export default function AboutPage() {
             <SectionHeading level={3} className="mb-4">
               Let&apos;s Work Together
             </SectionHeading>
-            <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
+            <p className="text-text-secondary mb-6 max-w-2xl mx-auto text-justify">
               I&apos;m always interested in new opportunities and collaborations. 
               Whether you have a project in mind or just want to chat about technology and design, I&apos;d love to hear from you.
             </p>
