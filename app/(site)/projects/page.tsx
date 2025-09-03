@@ -6,6 +6,8 @@ import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Card } from '@/components/ui/Card'
 import { siteConfig } from '@/content/site'
+import Image from 'next/image'
+
 
 export default function ProjectsPage() {
   const router = useRouter()
@@ -62,7 +64,7 @@ export default function ProjectsPage() {
                 className="h-full cursor-pointer group"
               >
                 {/* Project Image Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg mb-6 flex items-center justify-center border border-accent/20 group-hover:border-accent/40 transition-colors duration-300">
+                {/* <div className="aspect-video bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg mb-6 flex items-center justify-center border border-accent/20 group-hover:border-accent/40 transition-colors duration-300">
                   <div className="text-center">
                     <div className="w-12 h-12 mx-auto mb-3 bg-accent/20 rounded-full flex items-center justify-center">
                       <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +73,18 @@ export default function ProjectsPage() {
                     </div>
                     <p className="text-text-secondary text-sm">Project Image</p>
                   </div>
+                </div> */}
+                {/* Project Preview Image */}
+                <div className="relative aspect-video rounded-lg mb-6 overflow-hidden border border-accent/20 group-hover:border-accent/40 transition-colors duration-300">
+                  <Image
+                    src={project.images[0]}
+                    alt={`${project.title} preview`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
+
 
                 <div className="space-y-4">
                   <div>

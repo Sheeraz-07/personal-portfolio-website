@@ -71,7 +71,7 @@ export default function HomePage() {
   whileHover={{ scale: 1.02 }}
 >
   <video
-    src="/videos/hero.mp4"  // <-- place your file in public/videos/hero.mp4
+    src="/videos/hero_green.mp4"  // <-- place your file in public/videos/hero.mp4
     autoPlay
     muted
     loop

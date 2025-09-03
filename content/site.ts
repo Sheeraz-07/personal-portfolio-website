@@ -79,7 +79,7 @@ skills: [
     "role": "Machine Learning Developer",
     "tools": ["Python", "Streamlit", "scikit-learn", "Regression Models"],
     "results": "Provided accurate salary estimates with visualizations for confidence and feature impact",
-    "images": ["/images/salary1.webp", "/images/salary2.jpg", "/images/salary3.jpg"],
+    "images": ["/images/salary-pred-1.jpg", "/images/salary-pred-2.jpg", "/images/salary-pred-3.webp"],
     "backstory": "Job seekers and HR teams needed a quick way to predict salaries for various profiles using ML.",
     "process": [
       "Collected and preprocessed salary datasets",
@@ -96,7 +96,7 @@ skills: [
   "role": "AI Engineer & IoT Developer",
   "tools": ["ESP32-CAM", "Raspberry Pi", "OpenCV", "Face Recognition", "Python"],
   "results": "Enabled intelligent visitor detection with real-time face recognition, reducing the need for manual checks and improving home security",
-  "images": ["/images/doorbell1.jpg", "/images/doorbell2.webp", "/images/doorbell3.png"],
+  "images": ["/images/smartd-1.png", "/images/smartd-2.jpg", "/images/smartd-3.jpg"],
   "backstory": "Built as an IoT and AI integration project to explore real-world applications of computer vision and embedded systems. The system combined edge devices with machine learning to create a practical, security-focused solution.",
   "process": [
     "Configured ESP32-CAM for video streaming and initial image capture",
@@ -115,7 +115,7 @@ skills: [
     "role": "AI Developer",
     "tools": ["Python", "NLP", "SQL", "Chainlit"],
     "results": "Bridged gap between non-technical users and databases, enabling easy query generation and reporting",
-    "images": ["/images/tabletrace1.webp", "/images/tabletrace2.jpg", "/images/tabletrace3.jpg"],
+    "images": ["/images/atrep1.jpg", "/images/atrep2.jpeg", "/images/atrep3.jpg"],
     "backstory": "Businesses and educators needed an intuitive way to generate SQL queries and attendance reports without coding knowledge.",
     "process": [
       "Processed natural language prompts using NLP techniques",
