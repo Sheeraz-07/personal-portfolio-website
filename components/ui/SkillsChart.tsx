@@ -93,7 +93,7 @@ export function SkillsChart({ skills }: SkillsChartProps) {
           color: '#E6EAF0',
           font: {
             size: 12,
-            weight: '500' as const,
+            weight: 500,
           },
         },
       },
