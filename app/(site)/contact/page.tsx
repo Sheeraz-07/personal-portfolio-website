@@ -52,7 +52,6 @@ export default function ContactPage() {
       }
     } catch (error) {
       console.error('Error sending message:', error)
-      // Handle error (you could show an error message here)
     } finally {
       setIsSubmitting(false)
     }
@@ -96,7 +95,6 @@ export default function ContactPage() {
   return (
     <div className="py-20">
       <Container>
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,19 +109,19 @@ export default function ContactPage() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="h-full"
           >
-            <Card>
+            <Card className="h-full flex flex-col">
               <SectionHeading level={3} className="mb-6">
                 Send a Message
               </SectionHeading>
               
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex-1 flex flex-col">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
                     Name *
@@ -180,6 +178,7 @@ export default function ContactPage() {
 
                 <motion.div
                   whileTap={{ scale: 0.98 }}
+                  className="mt-auto"
                 >
                   <AccentButton
                     type="submit"
@@ -193,14 +192,13 @@ export default function ContactPage() {
             </Card>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-            className="space-y-8"
+            className="h-full"
           >
-            <Card>
+            <Card className="h-full flex flex-col">
               <SectionHeading level={3} className="mb-6">
                 Let's Connect
               </SectionHeading>
@@ -238,18 +236,25 @@ export default function ContactPage() {
                 </div>
               </div>
             </Card>
-
-            <Card className="bg-gradient-to-r from-accent/5 to-accent/10 border-accent/20">
-              <SectionHeading level={4} className="mb-4">
-                Response Time
-              </SectionHeading>
-              <p className="text-text-secondary">
-                I typically respond to messages within 24-48 hours. For urgent inquiries, 
-                feel free to reach out on LinkedIn for a faster response.
-              </p>
-            </Card>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+          className="mt-16"
+        >
+          <Card className="bg-gradient-to-r from-accent/5 to-accent/10 border-accent/20">
+            <SectionHeading level={4} className="mb-4 text-center">
+              Response Time
+            </SectionHeading>
+            <p className="text-text-secondary text-center max-w-2xl mx-auto">
+              I typically respond to messages within 24-48 hours. For urgent inquiries, 
+              feel free to reach out on LinkedIn for a faster response.
+            </p>
+          </Card>
+        </motion.div>
       </Container>
     </div>
   )

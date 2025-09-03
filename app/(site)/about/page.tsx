@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -7,6 +8,69 @@ import { Card } from '@/components/ui/Card'
 import { ModernSkillsSection } from '@/components/ui/ModernSkillsSection'
 import { siteConfig } from '@/content/site'
 import Image from "next/image"
+
+function CGPAProgressRing() {
+  const [animatedValue, setAnimatedValue] = useState(0)
+  const cgpaValue = (3.61 / 4.0) * 100 // Convert CGPA to percentage
+  const radius = 45
+  const circumference = 2 * Math.PI * radius
+  const strokeDasharray = circumference
+  const strokeDashoffset = circumference - (animatedValue / 100) * circumference
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimatedValue(cgpaValue)
+    }, 800)
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <div className="relative w-32 h-32">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          stroke="rgba(169, 177, 189, 0.1)"
+          strokeWidth="3"
+          fill="none"
+        />
+        <motion.circle
+          cx="50"
+          cy="50"
+          r={radius}
+          stroke="url(#cgpaGradient)"
+          strokeWidth="3"
+          fill="none"
+          strokeLinecap="round"
+          strokeDasharray={strokeDasharray}
+          initial={{ strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+          className="drop-shadow-lg"
+        />
+        <defs>
+          <linearGradient id="cgpaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#00D1B2" />
+            <stop offset="50%" stopColor="#7C3AED" />
+            <stop offset="100%" stopColor="#06B6D4" />
+          </linearGradient>
+        </defs>
+      </svg>
+      
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <motion.span
+          className="text-lg font-bold text-accent"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+        >
+          {siteConfig.education.cgpa}
+        </motion.span>
+      </div>
+    </div>
+  )
+}
 
 export default function AboutPage() {
   return (
@@ -73,6 +137,8 @@ export default function AboutPage() {
                 </p>
               </div>
             </Card>
+
+
           </motion.div>
 
           {/* Skills Section */}
@@ -87,6 +153,34 @@ export default function AboutPage() {
             </div>
           </motion.div>
         </div>
+
+        {/* Education Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+          className="mt-16"
+        >
+          <Card>
+            <SectionHeading level={3} className="mb-6 text-center">
+              Education
+            </SectionHeading>
+            <div className="relative max-w-4xl mx-auto">
+              <div className="text-center">
+                <h4 className="text-2xl font-semibold text-text-primary mb-3">{siteConfig.education.institution}</h4>
+                <p className="text-xl text-text-secondary mb-6">{siteConfig.education.degree}</p>
+                <div className="flex justify-center items-center gap-8 text-base">
+                  <span className="text-text-secondary">{siteConfig.education.semester}</span>
+                  <span className="text-text-secondary">{siteConfig.education.year}</span>
+                </div>
+              </div>
+              <div className="absolute top-1/2 -translate-y-1/2 right-0 flex flex-col items-center">
+                <CGPAProgressRing />
+                <span className="text-sm text-text-secondary mt-3 font-medium">CGPA</span>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
 
         {/* Contact CTA */}
         <motion.div
