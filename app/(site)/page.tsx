@@ -68,7 +68,7 @@ export default function HomePage() {
   initial={{ opacity: 0, scale: 0.8 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-  whileHover={{ scale: window.innerWidth > 768 ? 1.02 : 1 }}
+  whileHover={{ scale: [1, 1.02, 1] }}
 >
   <video
     src="/videos/hero_green.mp4"
