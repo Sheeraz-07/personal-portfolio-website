@@ -10,35 +10,40 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-surface border-t border-text-secondary/20 py-8">
-      <Container>
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <div className="text-sm text-text-secondary">
+    <footer className="bg-surface border-t border-text-secondary/20 py-6 sm:py-8 safe-area-inset-bottom">
+      <Container className="mobile-padding">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 px-2 sm:px-0">
+          <div className="text-xs sm:text-sm text-text-secondary text-center md:text-left">
             © 2025 Storyfolio. All rights reserved.
           </div>
           
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-8 sm:space-x-6">
             {siteConfig.socialLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.name}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-200"
+                className="text-text-secondary hover:text-accent transition-all duration-200 p-2 rounded-lg hover:bg-accent/10 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label={`Visit ${link.name}`}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <SocialIcon name={link.icon} />
-              </a>
+              </motion.a>
             ))}
           </div>
           
           <motion.button
             onClick={scrollToTop}
-            className="text-sm text-text-secondary hover:text-accent transition-colors duration-200"
-            whileHover={{ y: -2 }}
-            whileTap={{ y: 0 }}
+            className="text-xs sm:text-sm text-text-secondary hover:text-accent transition-all duration-200 bg-surface hover:bg-accent/10 px-4 py-2 rounded-lg border border-text-secondary/20 hover:border-accent/40 min-h-[44px] flex items-center space-x-2"
+            whileHover={{ y: -2, scale: 1.05 }}
+            whileTap={{ y: 0, scale: 0.95 }}
           >
-            Back to top ↑
+            <span>Back to top</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
           </motion.button>
         </div>
       </Container>

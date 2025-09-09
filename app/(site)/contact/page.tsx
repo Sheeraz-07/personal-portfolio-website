@@ -109,7 +109,7 @@ export default function ContactPage() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -130,7 +130,7 @@ export default function ContactPage() {
                     {...register('name')}
                     type="text"
                     id="name"
-                    className="w-full px-4 py-3 bg-background border border-text-secondary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors duration-200"
+                    className="w-full px-3 sm:px-4 py-3 bg-background border border-text-secondary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors duration-200 text-base"
                     placeholder="Your name"
                   />
                   {errors.name && (
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     {...register('email')}
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 bg-background border border-text-secondary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors duration-200"
+                    className="w-full px-3 sm:px-4 py-3 bg-background border border-text-secondary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors duration-200 text-base"
                     placeholder="your.email@example.com"
                   />
                   {errors.email && (
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     {...register('message')}
                     id="message"
                     rows={6}
-                    className="w-full px-4 py-3 bg-background border border-text-secondary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors duration-200 resize-vertical"
+                    className="w-full px-3 sm:px-4 py-3 bg-background border border-text-secondary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors duration-200 resize-vertical text-base"
                     placeholder="Tell me about your project or just say hello..."
                   />
                   {errors.message && (

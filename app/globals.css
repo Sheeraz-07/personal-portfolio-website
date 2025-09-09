@@ -23,6 +23,47 @@
   
   body {
     @apply bg-background text-text-primary transition-colors duration-300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Enhanced Mobile optimizations */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+    
+    body {
+      /* Prevent horizontal scroll on mobile */
+      overflow-x: hidden;
+      /* Improve touch scrolling */
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* Mobile-first touch improvements */
+  @media (hover: none) and (pointer: coarse) {
+    /* Better touch targets */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .hover-effect:hover {
+      transform: none;
+    }
+  }
+  
+  /* Safe area handling for mobile devices */
+  @supports (padding: max(0px)) {
+    .safe-area-inset-top {
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+    
+    .safe-area-inset-bottom {
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
   }
   
   /* Light theme specific improvements */
@@ -51,6 +92,14 @@
                 radial-gradient(circle at 40% 80%, rgba(0, 209, 178, 0.08) 0%, transparent 50%);
   }
   
+  /* Mobile-optimized gradient mesh */
+  @media (max-width: 768px) {
+    .gradient-mesh {
+      background: radial-gradient(circle at 30% 40%, rgba(0, 209, 178, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(0, 209, 178, 0.06) 0%, transparent 60%);
+    }
+  }
+  
   /* Light theme gradient mesh */
   :root .gradient-mesh {
     background: radial-gradient(circle at 20% 50%, rgba(0, 209, 178, 0.03) 0%, transparent 50%),
@@ -73,5 +122,65 @@
   
   .dark .card-shadow {
     box-shadow: none;
+  }
+  
+  /* Mobile-specific utilities */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text-balance {
+    text-wrap: balance;
+  }
+  
+  .mobile-scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Enhanced mobile animations */
+  @media (prefers-reduced-motion: no-preference) {
+    .mobile-slide-up {
+      animation: mobileSlideUp 0.6s ease-out;
+    }
+    
+    .mobile-fade-in {
+      animation: mobileFadeIn 0.5s ease-out;
+    }
+  }
+  
+  @keyframes mobileSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes mobileFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Mobile typography improvements */
+  @media (max-width: 640px) {
+    .mobile-heading-1 {
+      @apply text-3xl leading-tight;
+    }
+    
+    .mobile-heading-2 {
+      @apply text-2xl leading-tight;
+    }
+    
+    .mobile-body {
+      @apply text-base leading-relaxed;
+    }
   }
 }

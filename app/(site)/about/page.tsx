@@ -74,24 +74,24 @@ function CGPAProgressRing() {
 
 export default function AboutPage() {
   return (
-    <div className="py-20">
-      <Container>
+    <div className="py-12 sm:py-16 lg:py-20 safe-area-inset-top">
+      <Container className="mobile-padding">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
         >
-          <SectionHeading level={1} className="mb-6">
+          <SectionHeading level={1} className="mb-4 sm:mb-6 mobile-heading-1">
             About Me
           </SectionHeading>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto mobile-text-balance">
             Get to know the person behind the projects
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.9fr] gap-6 sm:gap-8 lg:gap-12 items-start px-2 sm:px-0">
           {/* Bio Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -100,40 +100,41 @@ export default function AboutPage() {
             className="space-y-8"
           >
             {/* Profile Image */}
-            <Card className="text-center">
+            <Card className="text-center p-6 sm:p-8">
           
-          <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent/20">
+          <div className="w-28 h-28 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-accent/20 shadow-lg">
           <Image 
             src="/images/profile.png" 
             alt="My profile" 
             width={400} 
             height={400} 
             priority
+            className="object-cover w-full h-full"
           />
           </div>
 
 
-              <SectionHeading level={2} className="mb-4">
+              <SectionHeading level={2} className="mb-3 sm:mb-4 mobile-heading-2">
                 {siteConfig.name}
               </SectionHeading>
               
-              <p className="text-accent font-medium mb-4">
+              <p className="text-sm sm:text-base text-accent font-medium mb-4 bg-accent/5 px-3 py-2 rounded-lg inline-block">
                 AI and IoT Innovator | Machine Learning Enthusiast
               </p>
             </Card>
 
             {/* Bio Text */}
-            <Card>
-              <SectionHeading level={3} className="mb-4">
+            <Card className="p-6 sm:p-8">
+              <SectionHeading level={3} className="mb-4 mobile-heading-2">
                 My Story
               </SectionHeading>
-              <p className="text-text-secondary leading-relaxed mb-6 text-justify">
+              <p className="text-sm sm:text-base text-text-secondary leading-relaxed mb-6 text-justify mobile-body">
                 {siteConfig.bio}
               </p>
               
-              <div className="p-4 bg-accent/5 rounded-lg border border-accent/20">
-                <p className="text-sm text-text-primary">
-                  <span className="font-medium text-accent">Fun fact:</span> {siteConfig.funFact}
+              <div className="p-4 sm:p-5 bg-accent/5 rounded-xl border border-accent/20 hover:bg-accent/10 transition-colors duration-200">
+                <p className="text-sm sm:text-base text-text-primary mobile-body">
+                  <span className="font-medium text-accent">💡 Fun fact:</span> {siteConfig.funFact}
                 </p>
               </div>
             </Card>
@@ -159,24 +160,26 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
-          className="mt-16"
+          className="mt-12 sm:mt-16"
         >
-          <Card>
-            <SectionHeading level={3} className="mb-6 text-center">
+          <Card className="p-6 sm:p-8">
+            <SectionHeading level={3} className="mb-6 text-center mobile-heading-2">
               Education
             </SectionHeading>
             <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 sm:gap-8">
                 <div className="text-center lg:text-left flex-1">
-                  <h4 className="text-2xl font-semibold text-text-primary mb-3">{siteConfig.education.institution}</h4>
-                  <p className="text-xl text-text-secondary mb-6">{siteConfig.education.degree}</p>
-                  <div className="flex justify-center lg:justify-start items-center gap-8 text-base">
-                    <span className="text-text-secondary">{siteConfig.education.semester}</span>
-                    <span className="text-text-secondary">{siteConfig.education.year}</span>
+                  <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold text-text-primary mb-3 mobile-heading-2">{siteConfig.education.institution}</h4>
+                  <p className="text-base sm:text-lg lg:text-xl text-text-secondary mb-4 sm:mb-6 mobile-body">{siteConfig.education.degree}</p>
+                  <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 sm:gap-8 text-sm sm:text-base">
+                    <span className="text-text-secondary bg-surface px-3 py-1 rounded-lg">{siteConfig.education.semester}</span>
+                    <span className="text-text-secondary bg-surface px-3 py-1 rounded-lg">{siteConfig.education.year}</span>
                   </div>
                 </div>
                 <div className="flex flex-col items-center lg:items-end">
-                  <CGPAProgressRing />
+                  <div className="transform scale-90 sm:scale-100">
+                    <CGPAProgressRing />
+                  </div>
                   <span className="text-sm text-text-secondary mt-3 font-medium">CGPA</span>
                 </div>
               </div>
@@ -189,19 +192,19 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
         >
-          <Card className="bg-gradient-to-r from-accent/5 to-accent/10 border-accent/20">
-            <SectionHeading level={3} className="mb-4">
+          <Card className="bg-gradient-to-r from-accent/5 to-accent/10 border-accent/20 p-6 sm:p-8">
+            <SectionHeading level={3} className="mb-4 mobile-heading-2">
               Let&apos;s Work Together
             </SectionHeading>
-            <p className="text-text-secondary mb-6 max-w-2xl mx-auto text-justify">
+            <p className="text-sm sm:text-base text-text-secondary mb-6 max-w-2xl mx-auto text-center sm:text-justify mobile-body leading-relaxed">
               I&apos;m always interested in new opportunities and collaborations. 
               Whether you have a project in mind or just want to chat about technology and design, I&apos;d love to hear from you.
             </p>
             <motion.a
               href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-accent text-background font-medium rounded-lg hover:bg-accent-hover transition-colors duration-200"
+              className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-accent text-background font-medium rounded-xl hover:bg-accent-hover transition-all duration-200 min-h-[44px] w-full sm:w-auto justify-center text-base sm:text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

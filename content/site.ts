@@ -97,7 +97,7 @@ education: {
       "Tested usability with sample datasets",
       "Deployed on Streamlit for easy access by non-technical users"
     ],
-    "githubUrl": "https://github.com/Sheeraz-07/data-anonymization-tool"
+    "githubUrl": "https://github.com/Sheeraz-07/data-anonymization-and-trade-offs.git"
   },
   {
     "slug": "salary-prediction-app",
@@ -115,7 +115,7 @@ education: {
       "Visualized confidence intervals and feature impact",
       "Validated predictions and deployed app"
     ],
-    "githubUrl": "https://github.com/Sheeraz-07/salary-prediction-app"
+    "githubUrl": "https://github.com/Sheeraz-07/developer-salary-prediction.git"
   },
  {
   "slug": "smart-doorbell-system",
@@ -133,7 +133,7 @@ education: {
     "Integrated alert mechanism to trigger doorbell ring and notifications when a known person is detected",
     "Tested the system in real-time with multiple users to ensure robustness and accuracy"
   ],
-  "githubUrl": "https://github.com/Sheeraz-07/smart-doorbell-system"
+  "githubUrl": "https://github.com/Sheeraz-07/SMART-DOORBELL-IOT-PROJECT.git"
 }
 
 ,
@@ -153,7 +153,7 @@ education: {
       "Developed interactive UI with Chainlit for easy user interaction",
       "Tested end-to-end functionality and refined for accuracy"
     ],
-    "githubUrl": "https://github.com/Sheeraz-07/table-trace-ai"
+    "githubUrl": "https://github.com/Sheeraz-07/Table-Trace-AI-Agent.git"
   }
 ],
 
